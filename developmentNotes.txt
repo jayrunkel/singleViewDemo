@@ -1,0 +1,4 @@
+
+//Importing the census data for PA
+mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --username demo --password demo --db counties --collection census2010 --headerline --type csv PA\ Census\ Data\ 2010.csv
+
