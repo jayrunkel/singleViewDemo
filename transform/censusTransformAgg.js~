@@ -1,0 +1,41 @@
+// Stages that have been excluded from the aggregation pipeline query
+__3t_MongoChef_disabled_aggregation_stages = [
+
+	{
+		// Stage 2 - excluded
+		stage: 2,  source: {
+			$match: {
+			$or : [{medianAgeFemale: {$type : "int"}}, {medianAgeMale: {$type : "int"}}, {medianAgeTotal : {$type : "int"}}]
+			}
+		}
+	},
+]
+
+db.census.aggregate(
+
+	// Pipeline
+	[
+		// Stage 1
+		{
+			$addFields: {
+			   
+			    medianAgeTotal : {$multiply : [ "$medianAgeTotal", 1.0000]},
+			    medianAgeMale: {$multiply : ["$medianAgeMale", 1.0000]},
+			    medianAgeFemale: {$multiply : ["$medianAgeFemale", 1.0000]}
+			}
+		},
+
+		// Stage 3
+		{
+			$out: "censusClean"
+		},
+	],
+
+	// Options
+	{
+		allowDiskUse: true
+	}
+
+	// Created with 3T MongoChef, the GUI for MongoDB - https://3t.io/mongochef
+
+);

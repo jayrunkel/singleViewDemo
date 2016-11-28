@@ -1,4 +1,4 @@
-agency,state,months,population,violentCrimeTotal,murderManslaughter,forcibleRape,robbery,aggravatedAssault,propertyCrimeTotal,burglary,larcenyTheft,motorVehicleTheft,violentCrimeRate,murderManslaughterRate,forcibleRapeRate,robberyRate,aggravatedAssaultRate,propertyCrimeRate,burglaryRate,larcenyTheftRate,motorVehicleTheftRate
+Agency,State,Months,Population,Violent crime total,Murder and nonnegligent Manslaughter,Forcible rape,Robbery,Aggravated assault,Property crime total,Burglary,Larceny-theft,Motor vehicle theft,Violent Crime rate,Murder and nonnegligent manslaughter rate,Forcible rape rate,Robbery rate,Aggravated assault rate,Property crime rate,Burglary rate,Larceny-theft rate,Motor vehicle theft rate
 Abington Twp (Montgomery Co) Police Dept,PA,12,55731,110,1,8,39,62,1103,165,920,18,197.4,1.8,14.4,70,111.2,1979.1,296.1,1650.8,32.3
 Adams Twp (Butler Co) Police Dept,PA,12,11735,7,0,0,1,6,45,13,31,1,59.7,0,0,8.5,51.1,383.5,110.8,264.2,8.5
 Allentown City Police Dept,PA,12,119334,653,15,54,374,210,4603,1248,2987,368,547.2,12.6,45.3,313.4,176,3857.2,1045.8,2503.1,308.4

@@ -3,4 +3,87 @@
 mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --username demo --password demo --db counties --collection census2010 --headerline --type csv PA\ Census\ Data\ 2010.csv
 
 //Importing the crime data for PA townships
-mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --username demo --password demo --db counties --collection crimeTwp2012 --headerline --type csv 
+mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --username demo --password demo --db counties --collection crimeTwp2012 --headerline --type csv PA\ Crime\ Data\ 2012.csv
+
+//Importing the township to county mapping
+mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --username demo --password demo --db counties --collection tspToCounty --headerline --type csv PATspCounty.csv
+
+
+// ----------------------------------------------------------------
+
+sparkR
+
+Install
+
+sudo apt-get install r-base -y
+
+
+Test
+
+./bin/sparkR --conf "spark.mongodb.input.uri=mongodb://127.0.0.1/nasa.eva" --conf "spark.mongodb.output.uri=mongodb://127.0.0.1/nasa.astronautTotals" --packages org.mongodb.spark:mongo-spark-connector_2.10:0.1
+
+evas <- read.df(sqlContext, source="com.mongodb.spark.sql.DefaultSource")
+printSchema(evas)
+
+registerTempTable(evas, “evas”)
+list <- sql(sqlContext, "SELECT * FROM evas WHERE Country='USA’")
+ head(list)
+
+
+EC2
+
+// need user with splitVector privilege on admin
+./bin/sparkR --conf "spark.mongodb.input.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --conf "spark.mongodb.output.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --packages org.mongodb.spark:mongo-spark-connector_2.10:0.1
+
+/*
+schema <- structType(
+            structField("county", "string"),
+            structField("totalPop", "integer"),
+            structField("male", "integer"),
+	    structField("female", "integer"),
+	    structField("medianAgeTotal", "double"),
+	    structField("medianAgeMale", "double"),
+	    structField("medianAgeFemale", "double"),
+	    structField("age0-2", "integer"),
+	    structField("age3-4", "integer"),
+	    structField("age5-18", "integer"),
+	    structField("age60-61", "integer"),
+	    structField("age62-64", "integer"),
+	    structField("age65plus", "integer"),
+	    structField("totalHousingUnits", "integer"),
+	    structField("occupiedHousingTotal", "integer"),
+	    structField("percentOwnedLoan", "double"),
+	    structField("percentOwnedNoLoan", "double"),
+	    structField("percentRenter", "double"),
+	    structField("vacantHousingTotal", "integer"),
+	    structField("percentVacant", "double"),
+	    structField("percentSeasonal", "double"),
+	    structField("percentVacantNotSeasonal", "double"),
+	    structField("householdsTotal", "integer"),
+	    structField("1-personhhld", "integer"),
+	    structField("2-personhhld", "integer"),
+	    structField("3-personhhld", "integer"),
+	    structField("4-personhhld", "integer"),
+	    structField("5-personhhld", "integer"),
+	    structField("6-personhhld", "integer"),
+	    structField("7-personPlus", "integer")
+)
+*/
+
+//countiesDF <- read.df(sqlContext, source="com.mongodb.spark.sql.DefaultSource")
+
+censusDF <- read.df(sqlContext,
+                    source = "com.mongodb.spark.sql.DefaultSource",
+		    uri = "mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.censusClean?authSource=admin")
+
+/*
+censusDF <- read.df(sqlContext,
+                    source = "com.mongodb.spark.sql.DefaultSource",
+		    uri = "mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.censusClean?authSource=admin",
+		    schema = schema)
+/*		    
+printSchema(censusDF)
+
+registerTempTable(censusDF, "census")
+list <- sql(sqlContext, "SELECT * FROM census WHERE county = \"Montgomery County\"")
+head(list)

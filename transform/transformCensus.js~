@@ -1,0 +1,13 @@
+
+// int age docs
+{$or : [{medianAgeFemale: {$type : "int"}}, {medianAgeMale: {$type : "int"}}, {medianAgeTotal : {$type : "int"}}]}
+
+// int percent docs
+{$or : [
+    {"percentOwnedLoan" : {$type : "int"}},
+    {"percentOwnedNoLoan", {$type : "int"}},
+    {"percentRenter", {$type : "int"}},
+    {"percentVacant", {$type : "int"}},
+    {"percentSeasonal", {$type : "int"}}
+    {"percentVacantNotSeasonal", {$type : "int"}}
+]}
