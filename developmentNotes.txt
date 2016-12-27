@@ -15,12 +15,18 @@ sparkR
 
 Install
 
+#ubuntu
 sudo apt-get install r-base -y
 
+#RHEL 7.2
+sudo yum install -y epel-release 
+sudo yum update -y 
+sudo yum install -y R
 
 Test
 
 ./bin/sparkR --conf "spark.mongodb.input.uri=mongodb://127.0.0.1/nasa.eva" --conf "spark.mongodb.output.uri=mongodb://127.0.0.1/nasa.astronautTotals" --packages org.mongodb.spark:mongo-spark-connector_2.10:0.1
+
 
 evas <- read.df(sqlContext, source="com.mongodb.spark.sql.DefaultSource")
 printSchema(evas)
@@ -33,7 +39,9 @@ list <- sql(sqlContext, "SELECT * FROM evas WHERE Country='USA’")
 EC2
 
 // need user with splitVector privilege on admin
-./bin/sparkR --conf "spark.mongodb.input.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --conf "spark.mongodb.output.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --packages org.mongodb.spark:mongo-spark-connector_2.10:0.1
+#./bin/sparkR --conf "spark.mongodb.input.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --conf "spark.mongodb.output.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --packages org.mongodb.spark:mongo-spark-connector_2.10:0.1
+
+./bin/sparkR --conf "spark.mongodb.input.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --conf "spark.mongodb.output.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --packages org.mongodb.spark:mongo-spark-connector_2.11:1.1.0
 
 /*
 schema <- structType(
@@ -74,7 +82,12 @@ schema <- structType(
 
 censusDF <- read.df(sqlContext,
                     source = "com.mongodb.spark.sql.DefaultSource",
-		    uri = "mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.censusClean?authSource=admin")
+		    uri = "mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.paCensus?authSource=admin")
+
+censusDF <- read.df(
+                    source = "com.mongodb.spark.sql.DefaultSource",
+		    uri = "mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.paCensus?authSource=admin")
+
 
 /*
 censusDF <- read.df(sqlContext,
@@ -87,3 +100,56 @@ printSchema(censusDF)
 registerTempTable(censusDF, "census")
 list <- sql(sqlContext, "SELECT * FROM census WHERE county = \"Montgomery County\"")
 head(list)
+
+
+# ----------------------------------------------------------------
+
+./bin/spark-shell --conf "spark.mongodb.input.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --conf "spark.mongodb.output.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --packages org.mongodb.spark:mongo-spark-connector_2.11:1.1.0
+
+import org.bson.Document
+import com.mongodb.spark._
+import org.apache.spark.sql.SparkSession
+
+val session=SparkSession.builder().getOrCreate()
+
+session.sparkContext.getConf.get("spark.mongodb.input.uri")
+
+#mongodb specific spark connection information
+import com.mongodb.spark.sql._
+
+val df = MongoSpark.load(session)
+
+df.printSchema()
+
+session.read.mongo()
+
+ df.createOrReplaceTempView("census")
+
+
+val rows = session.sql("SELECT * FROM census")
+rows.show()
+
+
+#set up write config
+
+import com.mongodb.spark.config._
+val writeConfig = WriteConfig(Map("collection" -> "census"), Some(WriteConfig(session.sparkContext)))
+
+
+val readConfig = ReadConfig(Map("collection" -> "census"), Some(ReadConfig(session.sparkContext)))
+val docs = MongoSpark.load(session.sparkContext, readConfig)
+print(docs.first)
+
+# ----------------------------------------------------------------
+
+library(SparkR)
+
+sc <- sparkR.init(appName="test")
+sqlContext <- sparkRSQL.init(sc)
+
+censusDF <- read.df(sqlContext,
+                    source = "com.mongodb.spark.sql.DefaultSource",
+		    uri = "mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.paCensus?authSource=admin")
+
+
+

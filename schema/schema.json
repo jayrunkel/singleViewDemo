@@ -1,0 +1,20 @@
+{
+    _id :
+    name: "Montgomery"
+    census : {
+	male: 2323,
+	female: 2335,
+	...
+    },
+    crime : {
+	murderRate: .32,
+	vehicleRobery: .023,
+	...
+    },
+    health : {
+	diabetes: .23,
+	alcohol: 7,
+	...
+    }
+}
+    
