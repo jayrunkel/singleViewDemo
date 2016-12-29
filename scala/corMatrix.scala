@@ -57,7 +57,13 @@ def mapToDocument(str : String) : Document = {
 
 val theFinal = resPlusHeader.map{arr => Document.parse(arr.map{case(a, b) => s"$a: $b"}.mkString("{", ", ", "}"))}
 
-theFinal.saveToMongoDB()
+val outDocs = theFinal.zipWithIndex().map{case (doc, i) => {
+    doc.put("field", header(i.toInt))
+    doc
+    }
+}
+
+outDocs.saveToMongoDB()
 
 
 
