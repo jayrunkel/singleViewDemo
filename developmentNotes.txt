@@ -153,3 +153,11 @@ censusDF <- read.df(sqlContext,
 
 
 
+# ----------------------------------------------------------------
+
+Documentation:
+1. Documents to ?
+2. ? to Documents
+3. What to the --package numbers mean?
+4. spark session????
+5. zip and unequal partitions
