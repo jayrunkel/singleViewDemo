@@ -14,14 +14,21 @@ import com.mongodb.spark.config._
 
 println("[Demo] Starting processing...")
 
+/*
 val table:String = "paCensus"
 val fields:Array[String] = Array("male", "female", "medianAgeTotal", "1-personhhld")
+*/
+
+val table:String = "paCrime"
+val fields:Array[String] = Array("Months", "Population", "Violent crime total", "Murder and nonnegligent Manslaughter", "Forcible rape", "Robbery", "Aggravated assault", "Property crime total", "Burglary", "Larceny-theft", "Motor vehicle theft", "Violent Crime rate", "Murder and nonnegligent manslaughter rate", "Forcible rape rate", "Robbery rate", "Aggravated assault rate", "Property crime rate", "Burglary rate", "Larceny-theft rate", "Motor vehicle theft rate")
+
+
 val sqlSelectStr = "SELECT " +  fields.map(col => s"`$col`").mkString(", ") + " FROM " + table
 
 println("[Demo] Reading data from MongoDB...")
 val censusDF = sqlContext.read.mongo()
 
-censusDF.registerTempTable("paCensus")
+censusDF.registerTempTable(table)
 
 //sqlContext.sql("SELECT county, `1-personhhld`, `2-personhhld`, `3-personhhld` FROM paCensus").show()
 
@@ -32,8 +39,10 @@ val dataRDD = data.rdd
 
 val dataVectors = dataRDD.map(row => {
   Vectors.dense(row.toSeq.toArray.map({
-    case s: String => s.toDouble
+    case s: String => 0.0    //s.toDouble
+    case d: Double => d
     case l: Long => l.toDouble
+    case i: Int => i.toDouble
     case _ => 0.0
   }))
 })
