@@ -1,22 +1,33 @@
 // Starting Spark
 // ./bin/spark-shell --conf "spark.mongodb.input.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.paCensus?authSource=admin" --conf "spark.mongodb.output.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.test?authSource=admin" --packages org.mongodb.spark:mongo-spark-connector_2.10:0.1
 
+println("[Demo] Loading libraries...")
+
 import org.apache.spark.mllib.linalg._
 import org.apache.spark.mllib.stat.Statistics
 import org.apache.spark.rdd.RDD
 
-//import org.bson.Document
+import org.bson.Document
 import com.mongodb.spark._
 import com.mongodb.spark.sql._
 import com.mongodb.spark.config._
 
-Val censusDF = sqlContext.read.mongo()
+println("[Demo] Starting processing...")
+
+val table:String = "paCensus"
+val fields:Array[String] = Array("male", "female", "medianAgeTotal", "1-personhhld")
+val sqlSelectStr = "SELECT " +  fields.map(col => s"`$col`").mkString(", ") + " FROM " + table
+
+println("[Demo] Reading data from MongoDB...")
+val censusDF = sqlContext.read.mongo()
 
 censusDF.registerTempTable("paCensus")
 
-#sqlContext.sql("SELECT county, `1-personhhld`, `2-personhhld`, `3-personhhld` FROM paCensus").show()
+//sqlContext.sql("SELECT county, `1-personhhld`, `2-personhhld`, `3-personhhld` FROM paCensus").show()
 
-val data = sqlContext.sql("SELECT `1-personhhld`, `2-personhhld`, `3-personhhld` FROM paCensus")
+val data = sqlContext.sql(sqlSelectStr)
+
+println("[Demo] Building correlation matrix...")
 val dataRDD = data.rdd
 
 val dataVectors = dataRDD.map(row => {
@@ -39,11 +50,10 @@ def toRDD(m: Matrix): RDD[Vector] = {
 val res = toRDD(correlMatrix)
 //val pRes = sc.parallelize(res.toArray())  //deprecated?
 
-import org.bson.Document
-val header = Array("One", "Two", "Three")
-Document.parse(s"{${header(0)} : ${first(0)}, ${header(1)}: ${first(1)}, ${header(2)} : ${first(2)}}")
+val header = fields
+//Document.parse(s"{${header(0)} : ${first(0)}, ${header(1)}: ${first(1)}, ${header(2)} : ${first(2)}}")
 
-
+println("[Demo] Transforming correlation matrix to documents...")
 //zip doesn't work do to unequal partitions
 //val headers = sc.parallelize((0 to res.count().toInt).map{nn => header})
 val merged = res.map{row => (row, header)}
@@ -51,11 +61,13 @@ val merged = res.map{row => (row, header)}
 
 val resPlusHeader = merged.map{case (a, b) => b.zip(a.toArray)}
 
+/*
 def mapToDocument(str : String) : Document = {
    new Document(str)
 }
+*/
 
-val theFinal = resPlusHeader.map{arr => Document.parse(arr.map{case(a, b) => s"$a: $b"}.mkString("{", ", ", "}"))}
+val theFinal = resPlusHeader.map{arr => Document.parse(arr.map{case(a, b) => s"'$a': $b"}.mkString("{", ", ", "}"))}
 
 val outDocs = theFinal.zipWithIndex().map{case (doc, i) => {
     doc.put("field", header(i.toInt))
@@ -63,6 +75,7 @@ val outDocs = theFinal.zipWithIndex().map{case (doc, i) => {
     }
 }
 
+println("[Demo] Saving results to MongoDB...")
 outDocs.saveToMongoDB()
 
 
