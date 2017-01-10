@@ -104,7 +104,7 @@ head(list)
 
 # ----------------------------------------------------------------
 
-./bin/spark-shell --conf "spark.mongodb.input.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --conf "spark.mongodb.output.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.census?authSource=admin" --packages org.mongodb.spark:mongo-spark-connector_2.11:1.1.0
+./bin/spark-shell --conf "spark.mongodb.input.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.paCensus?authSource=admin" --conf "spark.mongodb.output.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.test?authSource=admin" --packages org.mongodb.spark:mongo-spark-connector_2.11:1.1.0
 
 import org.bson.Document
 import com.mongodb.spark._
@@ -163,6 +163,13 @@ corReady <- sparkDF[ , !(names(sparkDF) %in% removeCols)]
 
 corMatrix <- cor(corReady)
 
+rDataFrame <- data.frame(corMatrix)
+rDataFrame[["parameter"]] <- colnames(rDataFrame)
+
+matSparkDF <- createDataFrame(sqlContext, rDataFrame)
+
+write.df(matSparkDF, "", source = "com.mongodb.spark.sql.DefaultSource", mode = "overwrite")
+
 
 
 # ----------------------------------------------------------------
@@ -173,3 +180,12 @@ Documentation:
 3. What to the --package numbers mean?
 4. spark session????
 5. zip and unequal partitions
+
+# ----------------------------------------------------------------
+
+import org.apache.spark.sql.SparkSession
+
+val spark = SparkSession.builder().appName("Spark SQL basic example").config("spark.mongodb.input.uri", "mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.paCensus?authSource=admin").config( "spark.mongodb.output.uri", "mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.test?authSource=admin").getOrCreate()
+
+// For implicit conversions like converting RDDs to DataFrames
+import spark.implicits._

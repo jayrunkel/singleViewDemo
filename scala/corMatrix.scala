@@ -1,6 +1,10 @@
 // Starting Spark
 // ./bin/spark-shell --conf "spark.mongodb.input.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.paCensus?authSource=admin" --conf "spark.mongodb.output.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.test?authSource=admin" --packages org.mongodb.spark:mongo-spark-connector_2.10:0.1
 
+// ./bin/spark-shell --conf "spark.mongodb.input.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.paCensus?authSource=admin" --conf "spark.mongodb.output.uri=mongodb://admin:admin@prometheus-0.genband-poc.4183.mongodbdns.com/counties.testR?authSource=admin" --packages org.mongodb.spark:mongo-spark-connector_2.11:2.0.0
+
+// ./bin/spark-shell --conf "spark.mongodb.input.uri=mongodb://admin:admin@localhost/counties.paCensus?authSource=admin" --conf "spark.mongodb.output.uri=mongodb://admin:admin@localhost/counties.testR?authSource=admin" --packages org.mongodb.spark:mongo-spark-connector_2.11:2.0.0
+
 println("[Demo] Loading libraries...")
 
 import org.apache.spark.mllib.linalg._
