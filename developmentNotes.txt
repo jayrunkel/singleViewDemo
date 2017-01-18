@@ -8,6 +8,8 @@ mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --u
 //Importing the township to county mapping
 mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --username demo --password demo --db counties --collection tspToCounty --headerline --type csv PATspCounty.csv
 
+mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --username demo --password demo --db counties --collection tspToCounty --headerline --type csv PACityCounty.csv
+
 
 // ----------------------------------------------------------------
 
