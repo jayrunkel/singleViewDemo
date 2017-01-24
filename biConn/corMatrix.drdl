@@ -1,0 +1,23 @@
+schema:
+- db: counties
+  tables:
+  - table: corMatrix
+    collection: corMatrix
+    pipeline: []
+    columns:
+    - Name: _id
+      MongoType: bson.ObjectId
+      SqlName: _id
+      SqlType: varchar
+    - Name: p1
+      MongoType: string
+      SqlName: p1
+      SqlType: varchar
+    - Name: p2
+      MongoType: string
+      SqlName: p2
+      SqlType: varchar
+    - Name: value
+      MongoType: float64
+      SqlName: value
+      SqlType: float64

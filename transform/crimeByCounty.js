@@ -44,6 +44,33 @@ db.paCrime.aggregate(
 			  
 			}
 		},
+
+		// Stage 5
+		{
+			$group: {
+				"_id" : "$county",
+				"townships": {"$addToSet" : "$township"},
+				"voilentcrimeTotal" : { "$sum" : "$violentCrimeTotal" }, 
+				"totalPopulation" : { "$sum" : "$population" }, 
+				"murderManslaughterTotal" : { "$sum" : "$murderManslaughter" }, 
+				"forcibleRapeTotal" : { "$sum" : "$forcibleRape" }, 
+				"robbertyTotal" : { "$sum" : "$robbery" }, 
+				"aggravatedAssaultTotal" : { "$sum" : "$aggravatedAssault" },
+				"propCrimeTotal" : { "$sum" : "$propertyCrimeTotal" },
+				"burglaryTotal" : { "$sum" : "$burglary" },
+				"larcenyTheftTotal" : { "$sum" : "$larcenyTheft" },
+				"motorVehicleTheftTotal" : { "$sum" : "$motorVehicleTheft" },
+				"voilentCrimeRate" : { "$avg" : "$violentCrimeRate" },
+				"manslaughterRate" : { "$avg" : "$murderManslaughterRate" },
+				"forcibleRapeRate" : { "$avg" : "$forcibleRapeRate" },
+				"robberyRate" : { "$avg" : "$robberyRate" },
+				"aggravatedAssaultRate" : { "$avg" : "$aggravatedAssaultRate" },
+				"propertyCrimeRate" : { "$avg" : "$propertyCrimeRate" },
+				"burglaryRate" : { "$avg" : "$burglaryRate" },
+				"larcenyTheftRate" : { "$avg" : "$larcenyTheftRate" },
+				"motorVehicleTheftRate" : { "$avg" : "$motorVehicleTheftRate" }
+			}
+		},
 	],
 
 	// Options

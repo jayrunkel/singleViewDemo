@@ -10,7 +10,7 @@ mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --u
 
 mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --username demo --password demo --db counties --collection tspToCounty --headerline --type csv PACityCounty.csv
 
-
+mongodump --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --username demo --password demo --db counties --gzip --archive=dump-18jan2017.agz
 // ----------------------------------------------------------------
 
 sparkR
@@ -191,3 +191,10 @@ val spark = SparkSession.builder().appName("Spark SQL basic example").config("sp
 
 // For implicit conversions like converting RDDs to DataFrames
 import spark.implicits._
+
+#----------------------------------------------------------------
+BI Connector Configuraiton
+
+mongodrdl --host localhost -d counties -c corMatrix -o corMatrix.drdl
+mongosqld --schema corMatrix.drdl --mongo-uri localhost:27017
+

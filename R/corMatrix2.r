@@ -36,3 +36,10 @@ stringCols <- c("county", "_id")
 corReady <- sparkDF[ , !(names(sparkDF) %in% stringCols)]
 
 corMatrix <- cor(corReady)
+
+rDataFrame <- data.frame(corMatrix)
+rDataFrame[["parameter"]] <- colnames(rDataFrame)
+
+matSparkDF <- createDataFrame(corMatrix)
+
+write.df(matSparkDF, "", source = "com.mongodb.spark.sql.DefaultSource", mode = "overwrite")
