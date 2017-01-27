@@ -40,6 +40,6 @@ corMatrix <- cor(corReady)
 rDataFrame <- data.frame(corMatrix)
 rDataFrame[["parameter"]] <- colnames(rDataFrame)
 
-matSparkDF <- createDataFrame(corMatrix)
+matSparkDF <- createDataFrame(rDataFrame)
 
 write.df(matSparkDF, "", source = "com.mongodb.spark.sql.DefaultSource", mode = "overwrite")

@@ -11,6 +11,8 @@ mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --u
 mongoimport --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --username demo --password demo --db counties --collection tspToCounty --headerline --type csv PACityCounty.csv
 
 mongodump --host prometheus-0.genband-poc.4183.mongodbdns.com --port 27017 --username demo --password demo --db counties --gzip --archive=dump-18jan2017.agz
+
+mongorestore --host localhost --port 27017 --db counties --gzip --archive=backup_27jan2017.agz
 // ----------------------------------------------------------------
 
 sparkR

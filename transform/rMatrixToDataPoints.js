@@ -11,6 +11,12 @@ function setCategory(str) {
    else if (str.startsWith("census")) {
   	   category = "census";
    }
+   else if (str.startsWith("diabetes")) {
+       category = "diabetes";
+   }
+    else if (str.includes("LE")) {
+	category = "lifeExpectancy";
+   }
    else {
   	   category = "crime";
    }

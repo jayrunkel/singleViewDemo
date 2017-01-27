@@ -1,0 +1,1099 @@
+schema:
+- db: counties
+  tables:
+  - table: countySingleView
+    collection: countySingleView
+    pipeline: []
+    columns:
+    - Name: _id
+      MongoType: bson.ObjectId
+      SqlName: _id
+      SqlType: varchar
+    - Name: aggravatedAssaultRate
+      MongoType: float64
+      SqlName: aggravatedAssaultRate
+      SqlType: float64
+    - Name: aggravatedAssaultTotal
+      MongoType: float64
+      SqlName: aggravatedAssaultTotal
+      SqlType: float64
+    - Name: alcoholAny2002BothSexes
+      MongoType: float64
+      SqlName: alcoholAny2002BothSexes
+      SqlType: float64
+    - Name: alcoholAny2002Females
+      MongoType: float64
+      SqlName: alcoholAny2002Females
+      SqlType: float64
+    - Name: alcoholAny2002Males
+      MongoType: float64
+      SqlName: alcoholAny2002Males
+      SqlType: float64
+    - Name: alcoholAny2003BothSexes
+      MongoType: float64
+      SqlName: alcoholAny2003BothSexes
+      SqlType: float64
+    - Name: alcoholAny2003Females
+      MongoType: float64
+      SqlName: alcoholAny2003Females
+      SqlType: float64
+    - Name: alcoholAny2003Males
+      MongoType: float64
+      SqlName: alcoholAny2003Males
+      SqlType: float64
+    - Name: alcoholAny2004BothSexes
+      MongoType: float64
+      SqlName: alcoholAny2004BothSexes
+      SqlType: float64
+    - Name: alcoholAny2004Females
+      MongoType: float64
+      SqlName: alcoholAny2004Females
+      SqlType: float64
+    - Name: alcoholAny2004Males
+      MongoType: float64
+      SqlName: alcoholAny2004Males
+      SqlType: float64
+    - Name: alcoholAny2005BothSexes
+      MongoType: float64
+      SqlName: alcoholAny2005BothSexes
+      SqlType: float64
+    - Name: alcoholAny2005Females
+      MongoType: float64
+      SqlName: alcoholAny2005Females
+      SqlType: float64
+    - Name: alcoholAny2005Males
+      MongoType: float64
+      SqlName: alcoholAny2005Males
+      SqlType: float64
+    - Name: alcoholAny2006BothSexes
+      MongoType: float64
+      SqlName: alcoholAny2006BothSexes
+      SqlType: float64
+    - Name: alcoholAny2006Females
+      MongoType: float64
+      SqlName: alcoholAny2006Females
+      SqlType: float64
+    - Name: alcoholAny2006Males
+      MongoType: float64
+      SqlName: alcoholAny2006Males
+      SqlType: float64
+    - Name: alcoholAny2007BothSexes
+      MongoType: float64
+      SqlName: alcoholAny2007BothSexes
+      SqlType: float64
+    - Name: alcoholAny2007Females
+      MongoType: float64
+      SqlName: alcoholAny2007Females
+      SqlType: float64
+    - Name: alcoholAny2007Males
+      MongoType: float64
+      SqlName: alcoholAny2007Males
+      SqlType: float64
+    - Name: alcoholAny2008BothSexes
+      MongoType: float64
+      SqlName: alcoholAny2008BothSexes
+      SqlType: float64
+    - Name: alcoholAny2008Females
+      MongoType: float64
+      SqlName: alcoholAny2008Females
+      SqlType: float64
+    - Name: alcoholAny2008Males
+      MongoType: float64
+      SqlName: alcoholAny2008Males
+      SqlType: float64
+    - Name: alcoholAny2009BothSexes
+      MongoType: float64
+      SqlName: alcoholAny2009BothSexes
+      SqlType: float64
+    - Name: alcoholAny2009Females
+      MongoType: float64
+      SqlName: alcoholAny2009Females
+      SqlType: float64
+    - Name: alcoholAny2009Males
+      MongoType: float64
+      SqlName: alcoholAny2009Males
+      SqlType: float64
+    - Name: alcoholAny2010BothSexes
+      MongoType: float64
+      SqlName: alcoholAny2010BothSexes
+      SqlType: float64
+    - Name: alcoholAny2010Females
+      MongoType: float64
+      SqlName: alcoholAny2010Females
+      SqlType: float64
+    - Name: alcoholAny2010Males
+      MongoType: float64
+      SqlName: alcoholAny2010Males
+      SqlType: float64
+    - Name: alcoholAny2011BothSexes
+      MongoType: float64
+      SqlName: alcoholAny2011BothSexes
+      SqlType: float64
+    - Name: alcoholAny2011Females
+      MongoType: float64
+      SqlName: alcoholAny2011Females
+      SqlType: float64
+    - Name: alcoholAny2011Males
+      MongoType: float64
+      SqlName: alcoholAny2011Males
+      SqlType: float64
+    - Name: alcoholAny2012BothSexes
+      MongoType: float64
+      SqlName: alcoholAny2012BothSexes
+      SqlType: float64
+    - Name: alcoholAny2012Females
+      MongoType: float64
+      SqlName: alcoholAny2012Females
+      SqlType: float64
+    - Name: alcoholAny2012Males
+      MongoType: float64
+      SqlName: alcoholAny2012Males
+      SqlType: float64
+    - Name: alcoholAnyPercentChange2002-2012BothSexes
+      MongoType: float64
+      SqlName: alcoholAnyPercentChange2002-2012BothSexes
+      SqlType: float64
+    - Name: alcoholAnyPercentChange2002-2012Females
+      MongoType: float64
+      SqlName: alcoholAnyPercentChange2002-2012Females
+      SqlType: float64
+    - Name: alcoholAnyPercentChange2002-2012Males
+      MongoType: float64
+      SqlName: alcoholAnyPercentChange2002-2012Males
+      SqlType: float64
+    - Name: alcoholAnyPercentChange2005-2012BothSexes
+      MongoType: float64
+      SqlName: alcoholAnyPercentChange2005-2012BothSexes
+      SqlType: float64
+    - Name: alcoholAnyPercentChange2005-2012Females
+      MongoType: float64
+      SqlName: alcoholAnyPercentChange2005-2012Females
+      SqlType: float64
+    - Name: alcoholAnyPercentChange2005-2012Males
+      MongoType: float64
+      SqlName: alcoholAnyPercentChange2005-2012Males
+      SqlType: float64
+    - Name: alcoholBinge2002BothSexes
+      MongoType: float64
+      SqlName: alcoholBinge2002BothSexes
+      SqlType: float64
+    - Name: alcoholBinge2002Females
+      MongoType: float64
+      SqlName: alcoholBinge2002Females
+      SqlType: float64
+    - Name: alcoholBinge2002Males
+      MongoType: float64
+      SqlName: alcoholBinge2002Males
+      SqlType: float64
+    - Name: alcoholBinge2003BothSexes
+      MongoType: float64
+      SqlName: alcoholBinge2003BothSexes
+      SqlType: float64
+    - Name: alcoholBinge2003Females
+      MongoType: float64
+      SqlName: alcoholBinge2003Females
+      SqlType: float64
+    - Name: alcoholBinge2003Males
+      MongoType: float64
+      SqlName: alcoholBinge2003Males
+      SqlType: float64
+    - Name: alcoholBinge2004BothSexes
+      MongoType: float64
+      SqlName: alcoholBinge2004BothSexes
+      SqlType: float64
+    - Name: alcoholBinge2004Females
+      MongoType: float64
+      SqlName: alcoholBinge2004Females
+      SqlType: float64
+    - Name: alcoholBinge2004Males
+      MongoType: float64
+      SqlName: alcoholBinge2004Males
+      SqlType: float64
+    - Name: alcoholBinge2005BothSexes
+      MongoType: float64
+      SqlName: alcoholBinge2005BothSexes
+      SqlType: float64
+    - Name: alcoholBinge2005Females
+      MongoType: float64
+      SqlName: alcoholBinge2005Females
+      SqlType: float64
+    - Name: alcoholBinge2005Males
+      MongoType: float64
+      SqlName: alcoholBinge2005Males
+      SqlType: float64
+    - Name: alcoholBinge2006BothSexes
+      MongoType: float64
+      SqlName: alcoholBinge2006BothSexes
+      SqlType: float64
+    - Name: alcoholBinge2006Females
+      MongoType: float64
+      SqlName: alcoholBinge2006Females
+      SqlType: float64
+    - Name: alcoholBinge2006Males
+      MongoType: float64
+      SqlName: alcoholBinge2006Males
+      SqlType: float64
+    - Name: alcoholBinge2007BothSexes
+      MongoType: float64
+      SqlName: alcoholBinge2007BothSexes
+      SqlType: float64
+    - Name: alcoholBinge2007Females
+      MongoType: float64
+      SqlName: alcoholBinge2007Females
+      SqlType: float64
+    - Name: alcoholBinge2007Males
+      MongoType: float64
+      SqlName: alcoholBinge2007Males
+      SqlType: float64
+    - Name: alcoholBinge2008BothSexes
+      MongoType: float64
+      SqlName: alcoholBinge2008BothSexes
+      SqlType: float64
+    - Name: alcoholBinge2008Females
+      MongoType: float64
+      SqlName: alcoholBinge2008Females
+      SqlType: float64
+    - Name: alcoholBinge2008Males
+      MongoType: float64
+      SqlName: alcoholBinge2008Males
+      SqlType: float64
+    - Name: alcoholBinge2009BothSexes
+      MongoType: float64
+      SqlName: alcoholBinge2009BothSexes
+      SqlType: float64
+    - Name: alcoholBinge2009Females
+      MongoType: float64
+      SqlName: alcoholBinge2009Females
+      SqlType: float64
+    - Name: alcoholBinge2009Males
+      MongoType: float64
+      SqlName: alcoholBinge2009Males
+      SqlType: float64
+    - Name: alcoholBinge2010BothSexes
+      MongoType: float64
+      SqlName: alcoholBinge2010BothSexes
+      SqlType: float64
+    - Name: alcoholBinge2010Females
+      MongoType: float64
+      SqlName: alcoholBinge2010Females
+      SqlType: float64
+    - Name: alcoholBinge2010Males
+      MongoType: float64
+      SqlName: alcoholBinge2010Males
+      SqlType: float64
+    - Name: alcoholBinge2011BothSexes
+      MongoType: float64
+      SqlName: alcoholBinge2011BothSexes
+      SqlType: float64
+    - Name: alcoholBinge2011Females
+      MongoType: float64
+      SqlName: alcoholBinge2011Females
+      SqlType: float64
+    - Name: alcoholBinge2011Males
+      MongoType: float64
+      SqlName: alcoholBinge2011Males
+      SqlType: float64
+    - Name: alcoholBinge2012BothSexes
+      MongoType: float64
+      SqlName: alcoholBinge2012BothSexes
+      SqlType: float64
+    - Name: alcoholBinge2012Females
+      MongoType: float64
+      SqlName: alcoholBinge2012Females
+      SqlType: float64
+    - Name: alcoholBinge2012Males
+      MongoType: float64
+      SqlName: alcoholBinge2012Males
+      SqlType: float64
+    - Name: alcoholBingePercentChange2002-2012BothSexes
+      MongoType: float64
+      SqlName: alcoholBingePercentChange2002-2012BothSexes
+      SqlType: float64
+    - Name: alcoholBingePercentChange2002-2012Females
+      MongoType: float64
+      SqlName: alcoholBingePercentChange2002-2012Females
+      SqlType: float64
+    - Name: alcoholBingePercentChange2002-2012Males
+      MongoType: float64
+      SqlName: alcoholBingePercentChange2002-2012Males
+      SqlType: float64
+    - Name: alcoholBingePercentChange2005-2012BothSexes
+      MongoType: float64
+      SqlName: alcoholBingePercentChange2005-2012BothSexes
+      SqlType: float64
+    - Name: alcoholBingePercentChange2005-2012Females
+      MongoType: float64
+      SqlName: alcoholBingePercentChange2005-2012Females
+      SqlType: float64
+    - Name: alcoholBingePercentChange2005-2012Males
+      MongoType: float64
+      SqlName: alcoholBingePercentChange2005-2012Males
+      SqlType: float64
+    - Name: alcoholHeavy2005BothSexes
+      MongoType: float64
+      SqlName: alcoholHeavy2005BothSexes
+      SqlType: float64
+    - Name: alcoholHeavy2005Females
+      MongoType: float64
+      SqlName: alcoholHeavy2005Females
+      SqlType: float64
+    - Name: alcoholHeavy2005Males
+      MongoType: float64
+      SqlName: alcoholHeavy2005Males
+      SqlType: float64
+    - Name: alcoholHeavy2006BothSexes
+      MongoType: float64
+      SqlName: alcoholHeavy2006BothSexes
+      SqlType: float64
+    - Name: alcoholHeavy2006Females
+      MongoType: float64
+      SqlName: alcoholHeavy2006Females
+      SqlType: float64
+    - Name: alcoholHeavy2006Males
+      MongoType: float64
+      SqlName: alcoholHeavy2006Males
+      SqlType: float64
+    - Name: alcoholHeavy2007BothSexes
+      MongoType: float64
+      SqlName: alcoholHeavy2007BothSexes
+      SqlType: float64
+    - Name: alcoholHeavy2007Females
+      MongoType: float64
+      SqlName: alcoholHeavy2007Females
+      SqlType: float64
+    - Name: alcoholHeavy2007Males
+      MongoType: float64
+      SqlName: alcoholHeavy2007Males
+      SqlType: float64
+    - Name: alcoholHeavy2008BothSexes
+      MongoType: float64
+      SqlName: alcoholHeavy2008BothSexes
+      SqlType: float64
+    - Name: alcoholHeavy2008Females
+      MongoType: float64
+      SqlName: alcoholHeavy2008Females
+      SqlType: float64
+    - Name: alcoholHeavy2008Males
+      MongoType: float64
+      SqlName: alcoholHeavy2008Males
+      SqlType: float64
+    - Name: alcoholHeavy2009BothSexes
+      MongoType: float64
+      SqlName: alcoholHeavy2009BothSexes
+      SqlType: float64
+    - Name: alcoholHeavy2009Females
+      MongoType: float64
+      SqlName: alcoholHeavy2009Females
+      SqlType: float64
+    - Name: alcoholHeavy2009Males
+      MongoType: float64
+      SqlName: alcoholHeavy2009Males
+      SqlType: float64
+    - Name: alcoholHeavy2010BothSexes
+      MongoType: float64
+      SqlName: alcoholHeavy2010BothSexes
+      SqlType: float64
+    - Name: alcoholHeavy2010Females
+      MongoType: float64
+      SqlName: alcoholHeavy2010Females
+      SqlType: float64
+    - Name: alcoholHeavy2010Males
+      MongoType: float64
+      SqlName: alcoholHeavy2010Males
+      SqlType: float64
+    - Name: alcoholHeavy2011BothSexes
+      MongoType: float64
+      SqlName: alcoholHeavy2011BothSexes
+      SqlType: float64
+    - Name: alcoholHeavy2011Females
+      MongoType: float64
+      SqlName: alcoholHeavy2011Females
+      SqlType: float64
+    - Name: alcoholHeavy2011Males
+      MongoType: float64
+      SqlName: alcoholHeavy2011Males
+      SqlType: float64
+    - Name: alcoholHeavy2012BothSexes
+      MongoType: float64
+      SqlName: alcoholHeavy2012BothSexes
+      SqlType: float64
+    - Name: alcoholHeavy2012Females
+      MongoType: float64
+      SqlName: alcoholHeavy2012Females
+      SqlType: float64
+    - Name: alcoholHeavy2012Males
+      MongoType: float64
+      SqlName: alcoholHeavy2012Males
+      SqlType: float64
+    - Name: alcoholHeavyPercentChange2005-2012BothSexes
+      MongoType: float64
+      SqlName: alcoholHeavyPercentChange2005-2012BothSexes
+      SqlType: float64
+    - Name: alcoholHeavyPercentChange2005-2012Females
+      MongoType: float64
+      SqlName: alcoholHeavyPercentChange2005-2012Females
+      SqlType: float64
+    - Name: alcoholHeavyPercentChange2005-2012Males
+      MongoType: float64
+      SqlName: alcoholHeavyPercentChange2005-2012Males
+      SqlType: float64
+    - Name: alcoholPropBinge2002BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBinge2002BothSexes
+      SqlType: float64
+    - Name: alcoholPropBinge2002Females
+      MongoType: float64
+      SqlName: alcoholPropBinge2002Females
+      SqlType: float64
+    - Name: alcoholPropBinge2002Males
+      MongoType: float64
+      SqlName: alcoholPropBinge2002Males
+      SqlType: float64
+    - Name: alcoholPropBinge2003BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBinge2003BothSexes
+      SqlType: float64
+    - Name: alcoholPropBinge2003Females
+      MongoType: float64
+      SqlName: alcoholPropBinge2003Females
+      SqlType: float64
+    - Name: alcoholPropBinge2003Males
+      MongoType: float64
+      SqlName: alcoholPropBinge2003Males
+      SqlType: float64
+    - Name: alcoholPropBinge2004BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBinge2004BothSexes
+      SqlType: float64
+    - Name: alcoholPropBinge2004Females
+      MongoType: float64
+      SqlName: alcoholPropBinge2004Females
+      SqlType: float64
+    - Name: alcoholPropBinge2004Males
+      MongoType: float64
+      SqlName: alcoholPropBinge2004Males
+      SqlType: float64
+    - Name: alcoholPropBinge2005BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBinge2005BothSexes
+      SqlType: float64
+    - Name: alcoholPropBinge2005Females
+      MongoType: float64
+      SqlName: alcoholPropBinge2005Females
+      SqlType: float64
+    - Name: alcoholPropBinge2005Males
+      MongoType: float64
+      SqlName: alcoholPropBinge2005Males
+      SqlType: float64
+    - Name: alcoholPropBinge2006BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBinge2006BothSexes
+      SqlType: float64
+    - Name: alcoholPropBinge2006Females
+      MongoType: float64
+      SqlName: alcoholPropBinge2006Females
+      SqlType: float64
+    - Name: alcoholPropBinge2006Males
+      MongoType: float64
+      SqlName: alcoholPropBinge2006Males
+      SqlType: float64
+    - Name: alcoholPropBinge2007BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBinge2007BothSexes
+      SqlType: float64
+    - Name: alcoholPropBinge2007Females
+      MongoType: float64
+      SqlName: alcoholPropBinge2007Females
+      SqlType: float64
+    - Name: alcoholPropBinge2007Males
+      MongoType: float64
+      SqlName: alcoholPropBinge2007Males
+      SqlType: float64
+    - Name: alcoholPropBinge2008BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBinge2008BothSexes
+      SqlType: float64
+    - Name: alcoholPropBinge2008Females
+      MongoType: float64
+      SqlName: alcoholPropBinge2008Females
+      SqlType: float64
+    - Name: alcoholPropBinge2008Males
+      MongoType: float64
+      SqlName: alcoholPropBinge2008Males
+      SqlType: float64
+    - Name: alcoholPropBinge2009BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBinge2009BothSexes
+      SqlType: float64
+    - Name: alcoholPropBinge2009Females
+      MongoType: float64
+      SqlName: alcoholPropBinge2009Females
+      SqlType: float64
+    - Name: alcoholPropBinge2009Males
+      MongoType: float64
+      SqlName: alcoholPropBinge2009Males
+      SqlType: float64
+    - Name: alcoholPropBinge2010BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBinge2010BothSexes
+      SqlType: float64
+    - Name: alcoholPropBinge2010Females
+      MongoType: float64
+      SqlName: alcoholPropBinge2010Females
+      SqlType: float64
+    - Name: alcoholPropBinge2010Males
+      MongoType: float64
+      SqlName: alcoholPropBinge2010Males
+      SqlType: float64
+    - Name: alcoholPropBinge2011BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBinge2011BothSexes
+      SqlType: float64
+    - Name: alcoholPropBinge2011Females
+      MongoType: float64
+      SqlName: alcoholPropBinge2011Females
+      SqlType: float64
+    - Name: alcoholPropBinge2012Males
+      MongoType: float64
+      SqlName: alcoholPropBinge2012Males
+      SqlType: float64
+    - Name: alcoholPropBingePercentChange2002-2012BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBingePercentChange2002-2012BothSexes
+      SqlType: float64
+    - Name: alcoholPropBingePercentChange2002-2012Females
+      MongoType: float64
+      SqlName: alcoholPropBingePercentChange2002-2012Females
+      SqlType: float64
+    - Name: alcoholPropBingePercentChange2002-2012Males
+      MongoType: float64
+      SqlName: alcoholPropBingePercentChange2002-2012Males
+      SqlType: float64
+    - Name: alcoholPropBingePercentChange2005-2012BothSexes
+      MongoType: float64
+      SqlName: alcoholPropBingePercentChange2005-2012BothSexes
+      SqlType: float64
+    - Name: alcoholPropBingePercentChange2005-2012Females
+      MongoType: float64
+      SqlName: alcoholPropBingePercentChange2005-2012Females
+      SqlType: float64
+    - Name: alcoholPropBingePercentChange2005-2012Males
+      MongoType: float64
+      SqlName: alcoholPropBingePercentChange2005-2012Males
+      SqlType: float64
+    - Name: alcoholPropHeavy2005BothSexes
+      MongoType: float64
+      SqlName: alcoholPropHeavy2005BothSexes
+      SqlType: float64
+    - Name: alcoholPropHeavy2005Females
+      MongoType: float64
+      SqlName: alcoholPropHeavy2005Females
+      SqlType: float64
+    - Name: alcoholPropHeavy2005Males
+      MongoType: float64
+      SqlName: alcoholPropHeavy2005Males
+      SqlType: float64
+    - Name: alcoholPropHeavy2006BothSexes
+      MongoType: float64
+      SqlName: alcoholPropHeavy2006BothSexes
+      SqlType: float64
+    - Name: alcoholPropHeavy2006Females
+      MongoType: float64
+      SqlName: alcoholPropHeavy2006Females
+      SqlType: float64
+    - Name: alcoholPropHeavy2006Males
+      MongoType: float64
+      SqlName: alcoholPropHeavy2006Males
+      SqlType: float64
+    - Name: alcoholPropHeavy2007BothSexes
+      MongoType: float64
+      SqlName: alcoholPropHeavy2007BothSexes
+      SqlType: float64
+    - Name: alcoholPropHeavy2007Females
+      MongoType: float64
+      SqlName: alcoholPropHeavy2007Females
+      SqlType: float64
+    - Name: alcoholPropHeavy2007Males
+      MongoType: float64
+      SqlName: alcoholPropHeavy2007Males
+      SqlType: float64
+    - Name: alcoholPropHeavy2008BothSexes
+      MongoType: float64
+      SqlName: alcoholPropHeavy2008BothSexes
+      SqlType: float64
+    - Name: alcoholPropHeavy2008Females
+      MongoType: float64
+      SqlName: alcoholPropHeavy2008Females
+      SqlType: float64
+    - Name: alcoholPropHeavy2008Males
+      MongoType: float64
+      SqlName: alcoholPropHeavy2008Males
+      SqlType: float64
+    - Name: alcoholPropHeavy2009BothSexes
+      MongoType: float64
+      SqlName: alcoholPropHeavy2009BothSexes
+      SqlType: float64
+    - Name: alcoholPropHeavy2009Females
+      MongoType: float64
+      SqlName: alcoholPropHeavy2009Females
+      SqlType: float64
+    - Name: alcoholPropHeavy2009Males
+      MongoType: float64
+      SqlName: alcoholPropHeavy2009Males
+      SqlType: float64
+    - Name: alcoholPropHeavy2010BothSexes
+      MongoType: float64
+      SqlName: alcoholPropHeavy2010BothSexes
+      SqlType: float64
+    - Name: alcoholPropHeavy2010Females
+      MongoType: float64
+      SqlName: alcoholPropHeavy2010Females
+      SqlType: float64
+    - Name: alcoholPropHeavy2010Males
+      MongoType: float64
+      SqlName: alcoholPropHeavy2010Males
+      SqlType: float64
+    - Name: alcoholPropHeavy2011BothSexes
+      MongoType: float64
+      SqlName: alcoholPropHeavy2011BothSexes
+      SqlType: float64
+    - Name: alcoholPropHeavy2011Females
+      MongoType: float64
+      SqlName: alcoholPropHeavy2011Females
+      SqlType: float64
+    - Name: alcoholPropHeavy2011Males
+      MongoType: float64
+      SqlName: alcoholPropHeavy2011Males
+      SqlType: float64
+    - Name: alcoholPropHeavy2012BothSexes
+      MongoType: float64
+      SqlName: alcoholPropHeavy2012BothSexes
+      SqlType: float64
+    - Name: alcoholPropHeavy2012Females
+      MongoType: float64
+      SqlName: alcoholPropHeavy2012Females
+      SqlType: float64
+    - Name: alcoholPropHeavy2012Males
+      MongoType: float64
+      SqlName: alcoholPropHeavy2012Males
+      SqlType: float64
+    - Name: alcoholPropHeavyPercentChange2005-2012BothSexes
+      MongoType: float64
+      SqlName: alcoholPropHeavyPercentChange2005-2012BothSexes
+      SqlType: float64
+    - Name: alcoholPropHeavyPercentChange2005-2012Females
+      MongoType: float64
+      SqlName: alcoholPropHeavyPercentChange2005-2012Females
+      SqlType: float64
+    - Name: alcoholPropHeavyPercentChange2005-2012Males
+      MongoType: float64
+      SqlName: alcoholPropHeavyPercentChange2005-2012Males
+      SqlType: float64
+    - Name: burglaryRate
+      MongoType: float64
+      SqlName: burglaryRate
+      SqlType: float64
+    - Name: burglaryTotal
+      MongoType: float64
+      SqlName: burglaryTotal
+      SqlType: float64
+    - Name: census1-personhhld
+      MongoType: float64
+      SqlName: census1-personhhld
+      SqlType: float64
+    - Name: census2-personhhld
+      MongoType: float64
+      SqlName: census2-personhhld
+      SqlType: float64
+    - Name: census3-personhhld
+      MongoType: float64
+      SqlName: census3-personhhld
+      SqlType: float64
+    - Name: census4-personhhld
+      MongoType: float64
+      SqlName: census4-personhhld
+      SqlType: float64
+    - Name: census5-personhhld
+      MongoType: float64
+      SqlName: census5-personhhld
+      SqlType: float64
+    - Name: census6-personhhld
+      MongoType: float64
+      SqlName: census6-personhhld
+      SqlType: float64
+    - Name: census7-personPlus
+      MongoType: float64
+      SqlName: census7-personPlus
+      SqlType: float64
+    - Name: censusAge0-2
+      MongoType: float64
+      SqlName: censusAge0-2
+      SqlType: float64
+    - Name: censusAge3-4
+      MongoType: float64
+      SqlName: censusAge3-4
+      SqlType: float64
+    - Name: censusAge5-18
+      MongoType: float64
+      SqlName: censusAge5-18
+      SqlType: float64
+    - Name: censusAge60-61
+      MongoType: float64
+      SqlName: censusAge60-61
+      SqlType: float64
+    - Name: censusAge62-64
+      MongoType: float64
+      SqlName: censusAge62-64
+      SqlType: float64
+    - Name: censusAge65plus
+      MongoType: float64
+      SqlName: censusAge65plus
+      SqlType: float64
+    - Name: censusFemale
+      MongoType: float64
+      SqlName: censusFemale
+      SqlType: float64
+    - Name: censusHouseholdsTotal
+      MongoType: float64
+      SqlName: censusHouseholdsTotal
+      SqlType: float64
+    - Name: censusMale
+      MongoType: float64
+      SqlName: censusMale
+      SqlType: float64
+    - Name: censusMedianAgeFemale
+      MongoType: float64
+      SqlName: censusMedianAgeFemale
+      SqlType: float64
+    - Name: censusMedianAgeMale
+      MongoType: float64
+      SqlName: censusMedianAgeMale
+      SqlType: float64
+    - Name: censusMedianAgeTotal
+      MongoType: float64
+      SqlName: censusMedianAgeTotal
+      SqlType: float64
+    - Name: censusOccupiedHousingTotal
+      MongoType: float64
+      SqlName: censusOccupiedHousingTotal
+      SqlType: float64
+    - Name: censusPercentOwnedLoan
+      MongoType: float64
+      SqlName: censusPercentOwnedLoan
+      SqlType: float64
+    - Name: censusPercentOwnedNoLoan
+      MongoType: float64
+      SqlName: censusPercentOwnedNoLoan
+      SqlType: float64
+    - Name: censusPercentRenter
+      MongoType: float64
+      SqlName: censusPercentRenter
+      SqlType: float64
+    - Name: censusPercentSeasonal
+      MongoType: float64
+      SqlName: censusPercentSeasonal
+      SqlType: float64
+    - Name: censusPercentVacant
+      MongoType: float64
+      SqlName: censusPercentVacant
+      SqlType: float64
+    - Name: censusPercentVacantNotSeasonal
+      MongoType: float64
+      SqlName: censusPercentVacantNotSeasonal
+      SqlType: float64
+    - Name: censusTotalHousingUnits
+      MongoType: float64
+      SqlName: censusTotalHousingUnits
+      SqlType: float64
+    - Name: censusVacantHousingTotal
+      MongoType: float64
+      SqlName: censusVacantHousingTotal
+      SqlType: float64
+    - Name: county
+      MongoType: string
+      SqlName: county
+      SqlType: varchar
+    - Name: diabetesFIPS
+      MongoType: float64
+      SqlName: diabetesFIPS
+      SqlType: float64
+    - Name: diabetesPercentChange1999_2012BothSexes
+      MongoType: float64
+      SqlName: diabetesPercentChange1999_2012BothSexes
+      SqlType: float64
+    - Name: diabetesPercentChange1999_2012Females
+      MongoType: float64
+      SqlName: diabetesPercentChange1999_2012Females
+      SqlType: float64
+    - Name: diabetesPercentChange1999_2012Males
+      MongoType: float64
+      SqlName: diabetesPercentChange1999_2012Males
+      SqlType: float64
+    - Name: diabetesPrevalence1999BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence1999BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence1999Females
+      MongoType: float64
+      SqlName: diabetesPrevalence1999Females
+      SqlType: float64
+    - Name: diabetesPrevalence1999Males
+      MongoType: float64
+      SqlName: diabetesPrevalence1999Males
+      SqlType: float64
+    - Name: diabetesPrevalence2000BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2000BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2000Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2000Females
+      SqlType: float64
+    - Name: diabetesPrevalence2000Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2000Males
+      SqlType: float64
+    - Name: diabetesPrevalence2001BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2001BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2001Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2001Females
+      SqlType: float64
+    - Name: diabetesPrevalence2001Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2001Males
+      SqlType: float64
+    - Name: diabetesPrevalence2002BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2002BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2002Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2002Females
+      SqlType: float64
+    - Name: diabetesPrevalence2002Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2002Males
+      SqlType: float64
+    - Name: diabetesPrevalence2003BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2003BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2003Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2003Females
+      SqlType: float64
+    - Name: diabetesPrevalence2003Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2003Males
+      SqlType: float64
+    - Name: diabetesPrevalence2004BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2004BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2004Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2004Females
+      SqlType: float64
+    - Name: diabetesPrevalence2004Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2004Males
+      SqlType: float64
+    - Name: diabetesPrevalence2005BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2005BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2005Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2005Females
+      SqlType: float64
+    - Name: diabetesPrevalence2005Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2005Males
+      SqlType: float64
+    - Name: diabetesPrevalence2006BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2006BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2006Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2006Females
+      SqlType: float64
+    - Name: diabetesPrevalence2006Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2006Males
+      SqlType: float64
+    - Name: diabetesPrevalence2007BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2007BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2007Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2007Females
+      SqlType: float64
+    - Name: diabetesPrevalence2007Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2007Males
+      SqlType: float64
+    - Name: diabetesPrevalence2008BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2008BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2008Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2008Females
+      SqlType: float64
+    - Name: diabetesPrevalence2008Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2008Males
+      SqlType: float64
+    - Name: diabetesPrevalence2009BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2009BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2009Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2009Females
+      SqlType: float64
+    - Name: diabetesPrevalence2009Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2009Males
+      SqlType: float64
+    - Name: diabetesPrevalence2010BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2010BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2010Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2010Females
+      SqlType: float64
+    - Name: diabetesPrevalence2010Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2010Males
+      SqlType: float64
+    - Name: diabetesPrevalence2011BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2011BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2011Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2011Females
+      SqlType: float64
+    - Name: diabetesPrevalence2011Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2011Males
+      SqlType: float64
+    - Name: diabetesPrevalence2012BothSexes
+      MongoType: float64
+      SqlName: diabetesPrevalence2012BothSexes
+      SqlType: float64
+    - Name: diabetesPrevalence2012Females
+      MongoType: float64
+      SqlName: diabetesPrevalence2012Females
+      SqlType: float64
+    - Name: diabetesPrevalence2012Males
+      MongoType: float64
+      SqlName: diabetesPrevalence2012Males
+      SqlType: float64
+    - Name: diffFemaleLE1985_2010
+      MongoType: float64
+      SqlName: diffFemaleLE1985_2010
+      SqlType: float64
+    - Name: diffMaleLE1985_2010
+      MongoType: float64
+      SqlName: diffMaleLE1985_2010
+      SqlType: float64
+    - Name: femaleLE1985
+      MongoType: float64
+      SqlName: femaleLE1985
+      SqlType: float64
+    - Name: femaleLE1990
+      MongoType: float64
+      SqlName: femaleLE1990
+      SqlType: float64
+    - Name: femaleLE1995
+      MongoType: float64
+      SqlName: femaleLE1995
+      SqlType: float64
+    - Name: femaleLE2000
+      MongoType: float64
+      SqlName: femaleLE2000
+      SqlType: float64
+    - Name: femaleLE2005
+      MongoType: float64
+      SqlName: femaleLE2005
+      SqlType: float64
+    - Name: femaleLE2010
+      MongoType: float64
+      SqlName: femaleLE2010
+      SqlType: float64
+    - Name: forcibleRapeRate
+      MongoType: float64
+      SqlName: forcibleRapeRate
+      SqlType: float64
+    - Name: forcibleRapeTotal
+      MongoType: float64
+      SqlName: forcibleRapeTotal
+      SqlType: float64
+    - Name: larcenyTheftRate
+      MongoType: float64
+      SqlName: larcenyTheftRate
+      SqlType: float64
+    - Name: larcenyTheftTotal
+      MongoType: float64
+      SqlName: larcenyTheftTotal
+      SqlType: float64
+    - Name: maleLE1985
+      MongoType: float64
+      SqlName: maleLE1985
+      SqlType: float64
+    - Name: maleLE1990
+      MongoType: float64
+      SqlName: maleLE1990
+      SqlType: float64
+    - Name: maleLE1995
+      MongoType: float64
+      SqlName: maleLE1995
+      SqlType: float64
+    - Name: maleLE2000
+      MongoType: float64
+      SqlName: maleLE2000
+      SqlType: float64
+    - Name: maleLE2005
+      MongoType: float64
+      SqlName: maleLE2005
+      SqlType: float64
+    - Name: maleLE2010
+      MongoType: float64
+      SqlName: maleLE2010
+      SqlType: float64
+    - Name: motorVehicleTheftRate
+      MongoType: float64
+      SqlName: motorVehicleTheftRate
+      SqlType: float64
+    - Name: motorVehicleTheftTotal
+      MongoType: float64
+      SqlName: motorVehicleTheftTotal
+      SqlType: float64
+    - Name: murderManslaughterTotal
+      MongoType: float64
+      SqlName: murderManslaughterTotal
+      SqlType: float64
+    - Name: propCrimeTotal
+      MongoType: float64
+      SqlName: propCrimeTotal
+      SqlType: float64
+    - Name: propertyCrimeRate
+      MongoType: float64
+      SqlName: propertyCrimeRate
+      SqlType: float64
+    - Name: robberyRate
+      MongoType: float64
+      SqlName: robberyRate
+      SqlType: float64
+    - Name: voilentCrimeRate
+      MongoType: float64
+      SqlName: voilentCrimeRate
+      SqlType: float64
